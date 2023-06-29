@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from weather_project.local_settings import API_KEY
 
 import urllib.request
 import json
@@ -6,7 +7,7 @@ import json
 def index(request):
     if request.method == 'POST':
         city = request.POST['city']
-        source = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=f6e0ee3f7639429700d8bf44f5d8d5c2').read()
+        source = urllib.request.urlopen(f'http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={API_KEY}').read()
         list_of_data = json.loads(source)
         data = {
             "country_code": str(list_of_data['sys']['country']),
