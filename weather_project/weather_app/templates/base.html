@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>{# nematoma dalis #}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Weather Cat{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+<body>
+    <header>
+        <ul class="nav">
+            <button>Cats:</button><br>
+            <button>Weather:</button><br>
+            <button>Weather n Cats:</button>
+        </ul>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+<footer><p>&copy; 2023 Weather Cat </p></footer>
+</body>
+</html>
