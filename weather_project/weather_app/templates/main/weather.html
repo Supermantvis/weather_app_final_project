@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Welcome to {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>Weather Information</h1>
+
+<div class="form-container">
+  <form method="POST" action="{% url 'weather_data' %}">
+    {% csrf_token %}
+    <label for="city">Enter City:</label>
+    <input type="text" id="city" name="city">
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+<div class="weather-info">
+{% if message %}
+  <p class="message">{{ message }}</p>
+{% endif %}
+
+{% if country_code %}
+  <p>Country Code: {{ country_code }}</p>
+{% endif %}
+
+{% if coordinate %}
+  <p>Coordinate: {{ coordinate }}</p>
+{% endif %}
+
+{% if temp %}
+  <p>Temperature: {{ temp }}</p>
+{% endif %}
+
+{% if pressure %}
+  <p>Pressure: {{ pressure }}</p>
+{% endif %}
+
+{% if humidity %}
+  <p>Humidity: {{ humidity }}</p>
+{% endif %}
+
+{% if main %}
+  <p>Main: {{ main }}</p>
+{% endif %}
+
+{% if description %}
+  <p>Description: {{ description }}</p>
+{% endif %}
+
+{% if icon %}
+  <img src="http://openweathermap.org/img/wn/{{ icon }}.png" alt="Weather Icon">
+{% endif %}
+</div>
+{% endblock content %}

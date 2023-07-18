@@ -1,44 +1,16 @@
 {% extends "base.html" %}
 {% block title %}Welcome to {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>Weather Information</h1>
-
-<form method="POST" action="{% url 'index' %}">
-  {% csrf_token %}
-  <label for="city">Enter City:</label>
-  <input type="text" id="city" name="city">
-  <button type="submit">Search</button>
-</form>
-
-{% if country_code %}
-<p>Country Code: {{ country_code }}</p>
-{% endif %}
-
-{% if coordinate %}
-<p>Coordinate: {{ coordinate }}</p>
-{% endif %}
-
-{% if temp %}
-<p>Temperature: {{ temp }}</p>
-{% endif %}
-
-{% if pressure %}
-<p>Pressure: {{ pressure }}</p>
-{% endif %}
-
-{% if humidity %}
-<p>Humidity: {{ humidity }}</p>
-{% endif %}
-
-{% if main %}
-<p>Main: {{ main }}</p>
-{% endif %}
-
-{% if description %}
-<p>Description: {{ description }}</p>
-{% endif %}
-
-{% if icon %}
-<img src="http://openweathermap.org/img/wn/{{ icon }}.png" alt="Weather Icon">
-{% endif %}
+<h1>Hello and welcome to cats and weather app!</h1>
+<div class="home-div">
+    <p>
+        Here you can check weather by location. ☀️
+    </p>
+    <p>
+        See a cat of the day. 🐱
+    </p>
+    <p>
+        And see the weather cat! 🌧️
+    </p>
+</div>
 {% endblock content %}

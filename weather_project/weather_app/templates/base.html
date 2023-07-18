@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-    <head>{# nematoma dalis #}
+    <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Weather Cat{% endblock title %}</title>
+        <title>{% block title %}Weather n Cats{% endblock title %}</title>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
 <body>
     <header>
         <ul class="nav">
-            <button>Cats:</button><br>
-            <button>Weather:</button><br>
-            <button>Weather n Cats:</button>
+            <button class="btn"><a href="{% url 'index' %}">Home</a></button>
+            <button class="btn"><a href="{% url 'weather_data' %}">Weather</a></button>
+            <button class="btn"><a href="{% url 'cats_data' %}">Cats</a></button>
+            <button class="btn"><a href="{% url 'cats_n_weather' %}">Cats and weather</a></button>
+
         </ul>
     </header>
     <main>
